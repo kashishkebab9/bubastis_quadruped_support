@@ -86,15 +86,15 @@ def callback(data):
     #print(jacobian_det)
     jacobian_inv = np.linalg.inv(jacobian)
     delta_q = jacobian_inv*delta_x
-    print(delta_q)
+
     q_1_delta = delta_q[0][0]
     q_2_delta = delta_q[1][0]
     q_3_delta = delta_q[2][0]
     q_1 = q_1 + q_1_delta
     q_2 = q_2 + q_2_delta
     q_3 = q_3 + q_3_delta
-    print(q_1)
-    #print(jacobian_inv)
+
+    print(position_matrix)
     #jacobian_inv
 
     hello_str.position = [0, 0, 0, 0, 0, q_1, q_2, q_3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

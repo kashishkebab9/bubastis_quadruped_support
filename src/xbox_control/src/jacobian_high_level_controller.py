@@ -125,10 +125,10 @@ hello_str.effort = []
 def callback(data):
     rf.set_nom_position()
     rospy.sleep(.05)
-    step_joystick = data.axes[5]
+    step_joystick = data.axes[1]
     step_button = data.buttons[0]
-    if step_joystick ==-1:
-        recal_step = -step_joystick/4
+    if step_joystick == 1:
+        recal_step = step_joystick/4
         vertex_y = 1
         #vertex_x is the x position of the apex of the step, which is exactly half of the b_parabola
         vertex_x =  recal_step/2
@@ -137,63 +137,33 @@ def callback(data):
         a_parabola = (vertex_y)/((vertex_x**2)+vertex_x)
         #vertex_y is the height of the step we always want to see
         x_parabola = [0, recal_step/4, recal_step/2, 3*recal_step/4, recal_step]
-        x_parabola_0 = x_parabola[0]
-        x_parabola_1 = x_parabola[1]
-        x_parabola_2 = x_parabola[2]
-        x_parabola_3 = x_parabola[3]
-        x_parabola_4 = x_parabola[4]
-        y_parabola_0 = -a_parabola * (x_parabola_0**2) + (b_parabola* a_parabola * x_parabola_0)
-        y_parabola_1 = -a_parabola * (x_parabola_1**2) + (b_parabola* a_parabola * x_parabola_1)
-        y_parabola_2 = -a_parabola * (x_parabola_2**2) + (b_parabola* a_parabola * x_parabola_2)
-        y_parabola_3 = -a_parabola * (x_parabola_3**2) + (b_parabola* a_parabola * x_parabola_3)
-        y_parabola_4 = -a_parabola * (x_parabola_4**2) + (b_parabola* a_parabola * x_parabola_4)  
-        y_parabola = [ y_parabola_0, y_parabola_1, y_parabola_2, y_parabola_3, y_parabola_4]
-        
-        delta_x_parabola = [x_parabola_1 - x_parabola_0, x_parabola_2 - x_parabola_1, x_parabola_3 - x_parabola_2, x_parabola_4 - x_parabola_3]
-        delta_y_parabola = [y_parabola_1 - y_parabola_0, y_parabola_2 - y_parabola_1, y_parabola_3 - y_parabola_2, y_parabola_4 - y_parabola_3]
+        y_parabola =[]
+        for i in x_parabola:
+            footstep = -a_parabola * (i**2) + (b_parabola* a_parabola * i)
+            y_parabola.append(footstep)
+            delta_y_parabola = [y_parabola[i+1]-y_parabola[i] for i in range(len(y_parabola)-1)]
+            print "delta_y_parabola", delta_y_parabola
+            delta_x_parabola = [x_parabola[(i/1)+1]-x_parabola[i/1] for i in range(len(x_parabola)-1)]
+            print "delta_x_parabola", delta_x_parabola
 
-        print(delta_y_parabola)
-        print(delta_x_parabola)
+        rf.get_delta_q(-delta_x_parabola[0], 0, delta_y_parabola[0])
+        rospy.sleep(.5)
+        hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
+        print "step 1 complete"
+        rf.get_delta_q(-delta_x_parabola[1], 0, delta_y_parabola[1])
+        rospy.sleep(.5)
+        hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
+        print "step 2 complete"
+        rf.get_delta_q(-delta_x_parabola[2], 0, delta_y_parabola[2])
+        rospy.sleep(.5)
+        hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
+        print "step 3 complete"
+        rf.get_delta_q(-delta_x_parabola[3], 0, delta_y_parabola[3])
+        rospy.sleep(.5)
+        hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0] 
 
-        feet = [0, 1, 2, 3, 4]
-        
-        for f in feet:
-
-            if f == 0:
-                for i in range(4):
-                    rf.get_delta_q(-delta_x_parabola[i], 0, delta_y_parabola[i])
-                    rospy.sleep(.1)
-                    hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
-                    
-            elif f == 1:            
-                for i in range(4):
-                    lf.get_delta_q(-delta_x_parabola[i], 0, delta_y_parabola[i])
-                    rospy.sleep(.1)
-                    hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
-        
-            elif f == 2:        
-                for i in range(4):    
-                    rb.get_delta_q(-delta_x_parabola[i], 0, delta_y_parabola[i])
-                    rospy.sleep(.1)
-                    hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
-        
-            elif f == 3:        
-                for i in range(4):
-                    lb.get_delta_q(-delta_x_parabola[i], 0, delta_y_parabola[i])
-                    rospy.sleep(.1)
-                    hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
-                    
-            elif f == 4:
-                rospy.sleep(.1)
-                
-                rf.set_nom_position()
-                rb.set_nom_position()
-                lf.set_nom_position()
-                lb.set_nom_position()
-                hello_str.position = [lf.q_1, lf.q_2, lf.q_3, 0, 0, rf.q_1, rf.q_2, rf.q_3, 0, 0, lb.q_1, lb.q_2, lb.q_3, 0, 0, rb.q_1, rb.q_2, rb.q_3, 0, 0]
-                
     time_now = rospy.Time.now()
-
+    #print(time_now)
 
 
 def talker():

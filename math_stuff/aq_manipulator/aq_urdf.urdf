@@ -1,0 +1,1691 @@
+<robot
+  name="HMI-DD-URDF_20190118">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.19093630946866 -0.000533014254406946 -0.165963213384678"
+        rpy="0 0 0" />
+      <mass
+        value="545.891622705959" />
+      <inertia
+        ixx="0.852280025499816"
+        ixy="-0.0184887401242306"
+        ixz="-5.75678915795665"
+        iyy="39.7373351233956"
+        iyz="-0.00273718924561677"
+        izz="38.8850726796342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="payload_cam" />
+  <joint
+    name="payload_cam"
+    type="fixed">
+    <origin
+      xyz="-0.6858 -0.0879094 -0.0442468"
+      rpy="3.14159265358979 0.26179938779915 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="payload_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ins" />
+  <joint
+    name="ins"
+    type="fixed">
+    <origin
+      xyz="-1.1938 0 -0.369"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ins" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dvl" />
+  <joint
+    name="dvl"
+    type="fixed">
+    <origin
+      xyz="-1.7268 0 -0.321"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="dvl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hull/sonar_ms" />
+  <joint
+    name="hull/sonar_ms"
+    type="fixed">
+    <origin
+      xyz="-1.8898 0 -0.295770198957816"
+      rpy="3.14159265358979 0.177849406682945 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hull/sonar_ms" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fwd_stbd_horz_thruster_joint_link1">
+    <inertial>
+      <origin
+        xyz="0 0 0.2666492"
+        rpy="0 0 0" />
+      <mass
+        value="0.721001567719407" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster_joint_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster_joint_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_stbd_horz_thruster_j1"
+    type="prismatic">
+    <origin
+      xyz="-0.3521456 -0.3175 -0.2824988"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fwd_stbd_horz_thruster_joint_link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fwd_stbd_horz_thruster_joint_link2">
+    <inertial>
+      <origin
+        xyz="-0.259890894362499 0.0587162133620543 -0.241164422943745"
+        rpy="0 0 0" />
+      <mass
+        value="5.44779368070844" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster_joint_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster_joint_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_stbd_horz_thruster_j2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.5332984"
+      rpy="0 0 0" />
+    <parent
+      link="fwd_stbd_horz_thruster_joint_link1" />
+    <child
+      link="fwd_stbd_horz_thruster_joint_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fwd_stbd_horz_thruster">
+    <inertial>
+      <origin
+        xyz="-4.23807085603908E-06 3.8284190643223E-06 -0.0236322166015734"
+        rpy="0 0 0" />
+      <mass
+        value="0.323037100357989" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_horz_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_stbd_horz_thruster"
+    type="continuous">
+    <origin
+      xyz="-0.487426 0.0635 -0.2526018"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="fwd_stbd_horz_thruster_joint_link2" />
+    <child
+      link="fwd_stbd_horz_thruster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fwd_port_horz_thruster_joint_link1">
+    <inertial>
+      <origin
+        xyz="0 0 0.2666492"
+        rpy="0 0 0" />
+      <mass
+        value="0.721001567719407" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster_joint_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster_joint_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_port_horz_thruster_j1"
+    type="prismatic">
+    <origin
+      xyz="-0.3521456 0.3175 -0.2824988"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fwd_port_horz_thruster_joint_link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fwd_port_horz_thruster_joint_link2">
+    <inertial>
+      <origin
+        xyz="-0.259890894356305 -0.0587162133286451 -0.24116442290546"
+        rpy="0 0 0" />
+      <mass
+        value="5.44779368030283" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster_joint_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster_joint_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_port_horz_thruster_j2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.533298399961715"
+      rpy="0 0 0" />
+    <parent
+      link="fwd_port_horz_thruster_joint_link1" />
+    <child
+      link="fwd_port_horz_thruster_joint_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fwd_port_horz_thruster">
+    <inertial>
+      <origin
+        xyz="-4.23828631880086E-06 3.82884452032606E-06 -0.0236322165571194"
+        rpy="0 0 0" />
+      <mass
+        value="0.323037102862712" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_horz_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_port_horz_thruster"
+    type="continuous">
+    <origin
+      xyz="-0.487425999993806 -0.0634957564488159 -0.252601799961715"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="fwd_port_horz_thruster_joint_link2" />
+    <child
+      link="fwd_port_horz_thruster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="tail_link">
+    <inertial>
+      <origin
+        xyz="-0.170784955599107 2.64643747859494E-05 -0.148999090450041"
+        rpy="0 0 0" />
+      <mass
+        value="90.8850819555786" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/tail_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/tail_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tail_joint"
+    type="prismatic">
+    <origin
+      xyz="-2.20999258525087 0 -0.0546101822011739"
+      rpy="0 0.959931088596881 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="tail_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="aft_stbd_horz_thruster">
+    <inertial>
+      <origin
+        xyz="-1.15368825224791E-05 7.62817396382509E-06 -0.0236360191899481"
+        rpy="0 0 0" />
+      <mass
+        value="0.322985061139745" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_stbd_horz_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_stbd_horz_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="aft_stbd_horz_thruster"
+    type="continuous">
+    <origin
+      xyz="-0.366695129058815 -0.539332423275854 -0.428441004589911"
+      rpy="0.261799387799258 0.610865238198016 -2.89601095195021E-17" />
+    <parent
+      link="tail_link" />
+    <child
+      link="aft_stbd_horz_thruster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="aft_port_horz_thruster">
+    <inertial>
+      <origin
+        xyz="1.15368825201908E-05 -7.62817395338899E-06 -0.0236360191899485"
+        rpy="0 0 0" />
+      <mass
+        value="0.322985061139762" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_port_horz_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_port_horz_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="aft_port_horz_thruster"
+    type="continuous">
+    <origin
+      xyz="-0.36669861255887 0.539332423275854 -0.428438565416913"
+      rpy="-0.261799387799258 0.610865238198016 2.89601095195021E-17" />
+    <parent
+      link="tail_link" />
+    <child
+      link="aft_port_horz_thruster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="neck_link">
+    <inertial>
+      <origin
+        xyz="0.215427209214679 -0.0644755415507692 -0.00191920132703345"
+        rpy="0 0 0" />
+      <mass
+        value="94.0237038290075" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/neck_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/neck_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_j1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="seikowave/emit" />
+  <joint
+    name="seikowave/emit"
+    type="fixed">
+    <origin
+      xyz="0.219200000004 -0.12 0.23"
+      rpy="3.14159265358979 -1.42244334037538 -1.5707963267949" />
+    <parent
+      link="neck_link" />
+    <child
+      link="seikowave/emit" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="seikowave/cam" />
+  <joint
+    name="seikowave/cam"
+    type="fixed">
+    <origin
+      xyz="0.219200000004 -0.144 -0.223"
+      rpy="0 -1.42244334037538 1.5707963267949" />
+    <parent
+      link="neck_link" />
+    <child
+      link="seikowave/cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="head_link">
+    <inertial>
+      <origin
+        xyz="2.61599731657318E-05 -3.02651062148734E-05 0.120150400750032"
+        rpy="0 0 0" />
+      <mass
+        value="48.3178148872575" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/head_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/head_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_j2"
+    type="revolute">
+    <origin
+      xyz="0.37042 0 0"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="neck_link" />
+    <child
+      link="head_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="head_led" />
+  <joint
+    name="head_led"
+    type="fixed">
+    <origin
+      xyz="0.091 0 0.131779999916"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="head_link" />
+    <child
+      link="head_led" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="head_stereo/stbd" />
+  <joint
+    name="head_stereo/stbd"
+    type="fixed">
+    <origin
+      xyz="0.091 -0.084 0.131779999916"
+      rpy="-1.5707963267949 0 -1.49225651045515" />
+    <parent
+      link="head_link" />
+    <child
+      link="head_stereo/stbd" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="head_stereo/port" />
+  <joint
+    name="head_stereo/port"
+    type="fixed">
+    <origin
+      xyz="0.091 0.084 0.131779999916"
+      rpy="-1.5707963267949 0 -1.64933614313464" />
+    <parent
+      link="head_link" />
+    <child
+      link="head_stereo/port" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stbd_arm_j1_link">
+    <inertial>
+      <origin
+        xyz="-0.0492060621933463 -0.0664453688157692 0.220991549367413"
+        rpy="0 0 0" />
+      <mass
+        value="34.1439146236805" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j1"
+    type="revolute">
+    <origin
+      xyz="0 -0.19045 0"
+      rpy="1.5707963267949 0 -3.23468937122511E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="stbd_arm_j1_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="stbd_arm_j2_link">
+    <inertial>
+      <origin
+        xyz="0.0560817949902214 -0.134968429658817 6.22884105612991E-06"
+        rpy="0 0 0" />
+      <mass
+        value="18.4018476614284" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j2"
+    type="revolute">
+    <origin
+      xyz="-0.063754 0 0.314729999952"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="stbd_arm_j1_link" />
+    <child
+      link="stbd_arm_j2_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stbd_arm_j3_link">
+    <inertial>
+      <origin
+        xyz="-0.0225176435016046 0.000162502693298606 0.148868427922487"
+        rpy="0 0 0" />
+      <mass
+        value="17.7084901748519" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j3"
+    type="revolute">
+    <origin
+      xyz="0.0637499999999989 -0.2786 0"
+      rpy="1.5707963267949 1.73472347597996E-18 6.67868538251071E-17" />
+    <parent
+      link="stbd_arm_j2_link" />
+    <child
+      link="stbd_arm_j3_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="stbd_arm_j4_link">
+    <inertial>
+      <origin
+        xyz="0.0560817949902214 -0.134968429658817 6.22884105367425E-06"
+        rpy="0 0 0" />
+      <mass
+        value="18.4018476614284" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j4"
+    type="revolute">
+    <origin
+      xyz="-0.063754 0 0.2066036"
+      rpy="-1.5707963267949 -1.11022302462516E-16 -1.57772181044202E-30" />
+    <parent
+      link="stbd_arm_j3_link" />
+    <child
+      link="stbd_arm_j4_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stbd_arm_j5_link">
+    <inertial>
+      <origin
+        xyz="-0.0225176435016046 0.000162502693298593 0.148868427922487"
+        rpy="0 0 0" />
+      <mass
+        value="17.708490174852" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j5"
+    type="revolute">
+    <origin
+      xyz="0.0637500000000011 -0.2786 0"
+      rpy="1.5707963267949 1.81712284108462E-16 4.51895465491958E-16" />
+    <parent
+      link="stbd_arm_j4_link" />
+    <child
+      link="stbd_arm_j5_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="stbd_arm_j6_link">
+    <inertial>
+      <origin
+        xyz="0.059475442358457 -0.232552432616842 -0.00335884626835545"
+        rpy="0 0 0" />
+      <mass
+        value="33.0998104180057" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_J6"
+    type="revolute">
+    <origin
+      xyz="-0.063754 0 0.2066036"
+      rpy="-1.5707963267949 -1.11022302462516E-16 2.46519032881566E-32" />
+    <parent
+      link="stbd_arm_j5_link" />
+    <child
+      link="stbd_arm_j6_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stbd_arm_cam" />
+  <joint
+    name="stbd_arm_cam"
+    type="fixed">
+    <origin
+      xyz="0.0637499999999998 -0.485838600000001 -0.123596399999998"
+      rpy="1.5707963267949 6.1232339957478E-17 -5.93275428784071E-16" />
+    <parent
+      link="stbd_arm_j6_link" />
+    <child
+      link="stbd_arm_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stbd_arm_cam/led_1" />
+  <joint
+    name="stbd_arm_cam/led_1"
+    type="fixed">
+    <origin
+      xyz="0.11074 -0.4805046 -0.110693199999998"
+      rpy="1.5707963267949 6.1232339957478E-17 -5.93275428784071E-16" />
+    <parent
+      link="stbd_arm_j6_link" />
+    <child
+      link="stbd_arm_cam/led_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stbd_arm_j7_link">
+    <inertial>
+      <origin
+        xyz="4.84331037498009E-08 -1.8208794757963E-07 -0.00753198708818115"
+        rpy="0 0 0" />
+      <mass
+        value="0.340287773112519" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j7_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_arm_j7_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_arm_j7"
+    type="continuous">
+    <origin
+      xyz="0.0637499999999998 -0.503008199999999 0"
+      rpy="1.5707963267949 6.15826833973344E-17 -5.49907341884663E-16" />
+    <parent
+      link="stbd_arm_j6_link" />
+    <child
+      link="stbd_arm_j7_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="stbd_ee_jaw_in_link">
+    <inertial>
+      <origin
+        xyz="0.0232130473996801 -0.0436068895202442 -2.65257865240842E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.178134472400374" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_ee_jaw_in_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_ee_jaw_in_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_ee_jaw_in"
+    type="revolute">
+    <origin
+      xyz="-0.0400050000000002 0 0"
+      rpy="-1.5707963267949 -0.0158606169991536 2.36826935317417E-16" />
+    <parent
+      link="stbd_arm_j7_link" />
+    <child
+      link="stbd_ee_jaw_in_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stbd_ee_jaw_out_link">
+    <inertial>
+      <origin
+        xyz="-0.0234771533320276 -0.0508764596279288 9.947820159093E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.245966762127679" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_ee_jaw_out_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/stbd_ee_jaw_out_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stbd_ee_jaw_out"
+    type="revolute">
+    <origin
+      xyz="0.0400049999999998 0 0"
+      rpy="-1.5707963267949 4.75314232417661E-16 2.45029690981778E-16" />
+    <parent
+      link="stbd_arm_j7_link" />
+    <child
+      link="stbd_ee_jaw_out_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="stbd_arm_cam/led_2" />
+  <joint
+    name="stbd_arm_cam/led_2"
+    type="fixed">
+    <origin
+      xyz="0.0167599999999999 -0.481292000000001 -0.110693199999998"
+      rpy="1.5707963267949 6.1232339957478E-17 -5.93275428784071E-16" />
+    <parent
+      link="stbd_arm_j6_link" />
+    <child
+      link="stbd_arm_cam/led_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sonar_mb" />
+  <joint
+    name="sonar_mb"
+    type="fixed">
+    <origin
+      xyz="0.0888999999999999 -0.1925066 -0.3175"
+      rpy="4.8637363976017E-16 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="sonar_mb" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dorsal_link">
+    <inertial>
+      <origin
+        xyz="-0.49912277960837 -4.90206013604324E-05 -0.119246940267902"
+        rpy="0 0 0" />
+      <mass
+        value="229.359127804133" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/dorsal_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/dorsal_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dorsal_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.3521456 0 0.288798"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="dorsal_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="dorsal_cam/stbd_led" />
+  <joint
+    name="dorsal_cam/stbd_led"
+    type="fixed">
+    <origin
+      xyz="0.6583456 -0.415901743009926 -0.288798"
+      rpy="-1.5707963267949 0 -1.74532925199433" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="dorsal_cam/stbd_led" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dorsal_cam/port_led" />
+  <joint
+    name="dorsal_cam/port_led"
+    type="fixed">
+    <origin
+      xyz="0.6583456 0.415901743009926 -0.288798"
+      rpy="-1.5707963267949 0 -1.39626340159546" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="dorsal_cam/port_led" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dorsal_cam" />
+  <joint
+    name="dorsal_cam"
+    type="fixed">
+    <origin
+      xyz="0.7017766 0 -0.028448"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="dorsal_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="dorsal/sonar_ms" />
+  <joint
+    name="dorsal/sonar_ms"
+    type="fixed">
+    <origin
+      xyz="-0.0796544000000001 0 0.092202"
+      rpy="0 0 0" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="dorsal/sonar_ms" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="usbl" />
+  <joint
+    name="usbl"
+    type="fixed">
+    <origin
+      xyz="-0.3082544 0 0.092202"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="usbl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fwd_stbd_vert_thruster">
+    <inertial>
+      <origin
+        xyz="-6.27491904328092E-05 0.000106716349004832 -0.023639316069981"
+        rpy="0 0 0" />
+      <mass
+        value="0.322728713053895" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_vert_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_stbd_vert_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_stbd_vert_thruster"
+    type="continuous">
+    <origin
+      xyz="0.1362456 -0.1653032 -0.0461518"
+      rpy="2.70526034059121 -5.86500656014483E-17 -1.25775471570645E-16" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="fwd_stbd_vert_thruster" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="fwd_port_vert_thruster">
+    <inertial>
+      <origin
+        xyz="5.84966220859018E-05 -0.000106716349004499 -0.0236393160699812"
+        rpy="0 0 0" />
+      <mass
+        value="0.322728713053888" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_vert_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/fwd_port_vert_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwd_port_vert_thruster"
+    type="continuous">
+    <origin
+      xyz="0.1362456 0.1653032 -0.0461518"
+      rpy="-2.70526034059121 -5.86500656014483E-17 1.25775471570645E-16" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="fwd_port_vert_thruster" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="aft_cntr_vert_thruster">
+    <inertial>
+      <origin
+        xyz="-4.23807085558892E-06 3.82841906626394E-06 -0.0236322166015737"
+        rpy="0 0 0" />
+      <mass
+        value="0.323037100357994" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_cntr_vert_thruster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.294117647058824 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/aft_cntr_vert_thruster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="aft_cntr_vert_thruster"
+    type="continuous">
+    <origin
+      xyz="-1.7814544 0 -0.017272"
+      rpy="3.14159265358979 -6.16297582203915E-33 -1.38777878078145E-16" />
+    <parent
+      link="dorsal_link" />
+    <child
+      link="aft_cntr_vert_thruster" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="payload_link">
+    <inertial>
+      <origin
+        xyz="0.315786245575179 1.40314037687866E-08 0.0661068346125274"
+        rpy="0 0 0" />
+      <mass
+        value="55.3691283934281" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/payload_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/payload_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="payload_joint"
+    type="prismatic">
+    <origin
+      xyz="-1.0702798 0 -0.368762"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="payload_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="port_arm_j1_link">
+    <inertial>
+      <origin
+        xyz="-0.0492044812998044 0.0664454831455377 0.220990324680965"
+        rpy="0 0 0" />
+      <mass
+        value="34.1439732076416" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/port_arm_j1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.0980392156862745 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://HMI-DD-URDF_20190118/meshes/port_arm_j1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="port_arm_j1"
+    type="revolute">
+    <origin
+      xyz="0 0.19045 0"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="port_arm_j1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
